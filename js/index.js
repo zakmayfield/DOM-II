@@ -227,8 +227,22 @@ firstInput.addEventListener('blur', (e) => {
 
 
 
+//prevent propagation
 
+const h2 = document.querySelectorAll('h2');
 
+h2.forEach(item => {
+  item.addEventListener('click', function(e){
+    item.style.color = 'red';
+    e.stopPropagation();
+  });
+})
+
+const h2Parent = document.querySelector('.content-destination');
+
+h2Parent.addEventListener('click', () => {
+  h2Parent.style.backgroundColor = 'pink';
+})
 
 
 // const nav = document.querySelector('.nav');
